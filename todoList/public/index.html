@@ -1,0 +1,42 @@
+<!Doctype>
+<html>
+<head>
+<title>contact list app</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body ng-app="mainApp">
+  <div class="container" ng-controller="sdAppCtrl">//container for bootstrap css.
+    <h1>Content list</h1>
+     <table class = "table">
+       <thead>
+         <tr>
+           <th>Name</th>
+           <th>Email</th>
+           <th>Number</th>
+           <th>Action</th>
+           </th>&nbsp</th>
+         </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" class="form-control" ng-model="contact.name"></td>
+              <td><input type="text" class="form-control" ng-model="contact.email"></td>
+              <td><input typ="text"  class="form-control" ng-model="contact.number"></td>
+              <td><button class = "btn-primary" ng-click = addContact()>Add Contact</button>
+              <td><button class = "btn-alert" ng-click = updateContact()>Update</button>
+            </tr>
+         <tr ng-repeat = "contact in contactlist">
+           <td>{{contact.name}}</td>
+           <td>{{contact.email}}</td>
+           <td>{{contact.number}}</td>
+           <td><button class = "btn-danger" ng-click = deleteContact(contact._id)>Delete Contact</button>
+           <td><button class = "btn-warning" ng-click= editContact(contact._id)>Edit Contact</button>
+           <td><button class = "btn-primary" ng-click= sendMail()>Send Mail</button>
+           <tr>
+      </tbody>
+     </table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+<script src = "controller/controller.js"></script>
+</body>
+</html>
